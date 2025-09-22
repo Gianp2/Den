@@ -355,7 +355,7 @@ img {
 }
 
 /* ==========================================================================
-   6. COMPONENTES - BOTONES - MEJORADOS
+   6. COMPONENTES - BOTONES - MEJORADOS CON TEXTO OSCURO
    ========================================================================== */
 
 /* Botón base - MEJORADO */
@@ -377,8 +377,8 @@ img {
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     min-height: 60px;
     min-width: 180px;
-    /* Color de texto mejorado para mejor legibilidad */
-    color: var(--text-dark);
+    /* Color de texto oscuro para mejor legibilidad en todos los botones */
+    color: var(--text-dark) !important;
 }
 
 .btn::before {
@@ -397,20 +397,24 @@ img {
     left: 100%;
 }
 
-/* Botón principal - MEJORADO */
+/* Botón principal - MEJORADO con texto oscuro */
 .btn-primary {
-    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
-    color: white; /* Texto blanco para contraste máximo */
+    background: rgba(255, 255, 255, 0.95);
+    /* Texto oscuro para máximo contraste */
+    color: var(--text-dark) !important;
+    border: 2px solid rgba(252, 228, 232, 0.3);
     position: relative;
     z-index: 1;
     /* Sombra sutil de texto para mejor legibilidad */
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: none;
 }
 
 .btn-primary .btn-icon {
     margin-right: 10px;
     font-size: 1.1rem;
     transition: transform 0.3s ease;
+    /* Icono también oscuro */
+    color: var(--text-dark);
 }
 
 .btn-primary:hover .btn-icon {
@@ -426,32 +430,34 @@ img {
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 6px solid white;
+    border-top: 6px solid var(--text-dark);
     transform: translateY(-50%);
     transition: all 0.3s ease;
     z-index: 2;
 }
 
 .btn-primary:hover {
+    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
+    /* En hover, cambia a texto blanco para contraste */
+    color: white !important;
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 20px 40px rgba(252, 228, 232, 0.4);
-    color: white; /* Mantiene el blanco en hover */
+    border-color: transparent;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* Botón secundario - MEJORADO */
+/* Botón secundario - MEJORADO con texto oscuro */
 .btn-outline {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.95);
     /* Color oscuro para mejor legibilidad */
-    color: var(--text-dark);
-    border: 2px solid var(--lavender);
-    background: rgba(237, 231, 246, 0.15);
+    color: var(--text-dark) !important;
+    border: 2px solid rgba(237, 231, 246, 0.5);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     position: relative;
     /* Sombra sutil de texto */
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    text-shadow: none;
 }
 
 .btn-outline .btn-icon {
@@ -459,7 +465,7 @@ img {
     font-size: 1.1rem;
     transition: transform 0.3s ease;
     /* Icono también con color oscuro */
-    color: var(--text-dark);
+    color: var(--text-dark) !important;
 }
 
 .btn-outline:hover .btn-icon {
@@ -486,7 +492,7 @@ img {
 
 .btn-outline:hover {
     /* En hover, cambia a fondo pastel con texto blanco */
-    background: var(--lavender);
+    background: linear-gradient(135deg, var(--lavender), var(--mint-green));
     color: white !important; /* !important para asegurar el cambio */
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 20px 40px rgba(237, 231, 246, 0.4);
@@ -496,20 +502,21 @@ img {
 
 /* Botón de overlay en productos - MEJORADO */
 .product-overlay .btn {
-    background: white;
+    background: rgba(255, 255, 255, 0.98);
     /* Color oscuro para contraste con fondo blanco */
-    color: var(--text-dark);
+    color: var(--text-dark) !important;
     font-weight: 700;
     padding: 12px 25px;
     border-radius: 25px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     text-shadow: none; /* Sin sombra en botones pequeños */
+    border: 1px solid rgba(252, 228, 232, 0.3);
 }
 
 .product-overlay .btn:hover {
     transform: scale(1.05);
     /* En hover, fondo pastel con texto blanco */
-    background: var(--soft-pink);
+    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
     color: white !important;
     box-shadow: 0 8px 25px rgba(252, 228, 232, 0.3);
 }
@@ -519,9 +526,9 @@ img {
     display: inline-block;
     width: 60px;
     height: 60px;
-    background: white;
+    background: rgba(255, 255, 255, 0.98);
     /* Color oscuro para mejor contraste */
-    color: var(--text-dark);
+    color: var(--text-dark) !important;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -530,25 +537,28 @@ img {
     transition: all 0.4s ease;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     text-shadow: none;
+    border: 1px solid rgba(252, 228, 232, 0.3);
 }
 
 .gallery-link:hover {
-    background: var(--soft-pink);
+    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
     color: white !important;
     transform: scale(1.15) rotate(360deg);
     box-shadow: 0 10px 30px rgba(252, 228, 232, 0.4);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Botón back to top - MEJORADO */
+/* Botón back to top - MEJORADO con texto oscuro */
 .back-to-top {
     position: fixed;
     bottom: 30px;
     right: 30px;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
-    color: white; /* Blanco para máximo contraste */
+    background: rgba(255, 255, 255, 0.98);
+    /* Texto oscuro para máximo contraste */
+    color: var(--text-dark) !important;
+    border: 2px solid rgba(252, 228, 232, 0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -559,9 +569,9 @@ img {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
     text-decoration: none;
-    box-shadow: 0 5px 20px rgba(252, 228, 232, 0.4);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     cursor: pointer;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: none;
 }
 
 .back-to-top.show {
@@ -571,30 +581,32 @@ img {
 }
 
 .back-to-top:hover {
-    background: var(--lavender);
-    color: white !important; /* Mantiene blanco en hover */
+    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
+    color: white !important; /* Blanco en hover para contraste */
     transform: translateY(-10px) scale(1.1);
-    box-shadow: 0 15px 35px rgba(237, 231, 246, 0.4);
+    box-shadow: 0 15px 35px rgba(252, 228, 232, 0.4);
     text-decoration: none;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* Botón submit del formulario - MEJORADO */
+/* Botón submit del formulario - MEJORADO con texto oscuro */
 .btn-submit {
-    background: linear-gradient(135deg, var(--lavender), var(--mint-green));
-    color: white; /* Blanco para contraste */
+    background: rgba(255, 255, 255, 0.95);
+    /* Texto oscuro para contraste */
+    color: var(--text-dark) !important;
     font-weight: 600;
     padding: 15px 35px;
-    border: none;
+    border: 2px solid rgba(237, 231, 246, 0.4);
     border-radius: 25px;
     transition: all 0.4s ease;
     font-size: 1rem;
-    box-shadow: 0 8px 25px rgba(237, 231, 246, 0.3);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    text-shadow: none;
     width: 100%;
 }
 
 .btn-submit:hover {
+    background: linear-gradient(135deg, var(--lavender), var(--mint-green));
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 15px 35px rgba(237, 231, 246, 0.4);
     color: white !important;
@@ -605,23 +617,25 @@ img {
 .social-link {
     width: 55px;
     height: 55px;
-    background: linear-gradient(135deg, var(--lavender), var(--mint-green));
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(237, 231, 246, 0.4);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Blanco para máximo contraste */
+    /* Texto oscuro para contraste */
+    color: var(--text-dark) !important;
     font-size: 1.3rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 5px 20px rgba(237, 231, 246, 0.35);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    text-shadow: none;
 }
 
 .social-link:hover {
-    background: var(--soft-pink);
-    color: white !important; /* Mantiene blanco en hover */
+    background: linear-gradient(135deg, var(--lavender), var(--mint-green));
+    color: white !important; /* Blanco en hover */
     transform: translateY(-8px) rotate(360deg);
-    box-shadow: 0 15px 35px rgba(252, 228, 232, 0.4);
+    box-shadow: 0 15px 35px rgba(237, 231, 246, 0.4);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
@@ -1170,17 +1184,19 @@ img {
 }
 
 .product-overlay .btn {
-    background: white;
-    color: var(--soft-pink);
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--text-dark) !important;
     font-weight: 700;
     padding: 12px 25px;
     border-radius: 25px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid rgba(252, 228, 232, 0.3);
 }
 
 .product-overlay .btn:hover {
     transform: scale(1.05);
-    color: var(--peach);
+    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
+    color: white !important;
 }
 
 /* Contenido del producto - MEJORADO */
@@ -1296,8 +1312,8 @@ img {
     display: inline-block;
     width: 60px;
     height: 60px;
-    background: white;
-    color: var(--soft-pink);
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--text-dark) !important;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1305,11 +1321,12 @@ img {
     font-size: 1.4rem;
     transition: all 0.4s ease;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    border: 1px solid rgba(252, 228, 232, 0.3);
 }
 
 .gallery-link:hover {
-    background: var(--soft-pink);
-    color: white;
+    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
+    color: white !important;
     transform: scale(1.15) rotate(360deg);
     box-shadow: 0 10px 30px rgba(252, 228, 232, 0.4);
 }
@@ -1454,21 +1471,23 @@ img {
 .social-link {
     width: 55px;
     height: 55px;
-    background: linear-gradient(135deg, var(--lavender), var(--mint-green));
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(237, 231, 246, 0.4);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--text-dark) !important;
     font-size: 1.3rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 5px 20px rgba(237, 231, 246, 0.35);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
 .social-link:hover {
-    background: var(--soft-pink);
+    background: linear-gradient(135deg, var(--lavender), var(--mint-green));
+    color: white !important;
     transform: translateY(-8px) rotate(360deg);
-    box-shadow: 0 15px 35px rgba(252, 228, 232, 0.4);
+    box-shadow: 0 15px 35px rgba(237, 231, 246, 0.4);
 }
 
 /* ==========================================================================
@@ -1551,7 +1570,7 @@ img {
 }
 
 /* ==========================================================================
-   15. BOTÓN BACK TO TOP
+   15. BOTÓN BACK TO TOP - CONSOLIDADO
    ========================================================================== */
 
 .back-to-top {
@@ -1560,8 +1579,9 @@ img {
     right: 30px;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
-    color: white;
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--text-dark) !important;
+    border: 2px solid rgba(252, 228, 232, 0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1572,7 +1592,7 @@ img {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
     text-decoration: none;
-    box-shadow: 0 5px 20px rgba(252, 228, 232, 0.4);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     cursor: pointer;
 }
 
@@ -1583,9 +1603,10 @@ img {
 }
 
 .back-to-top:hover {
-    background: var(--lavender);
+    background: linear-gradient(135deg, var(--soft-pink), var(--peach));
+    color: white !important;
     transform: translateY(-10px) scale(1.1);
-    box-shadow: 0 15px 35px rgba(237, 231, 246, 0.4);
+    box-shadow: 0 15px 35px rgba(252, 228, 232, 0.4);
     text-decoration: none;
 }
 
@@ -1685,6 +1706,7 @@ img {
         width: 100%;
         max-width: 280px;
         min-height: 55px;
+        color: var(--text-dark) !important;
     }
     
     .hero-content {
