@@ -4,7 +4,7 @@
     <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
     <!-- Site metas -->
     <title>Panadería Artesanal Dulce Encanto</title>
@@ -48,64 +48,131 @@
         </div>
     </div>
 
-    <!-- Header -->
-    <header class="header-section">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="#inicio">
-                    <img src="images/logo.png" alt="Dulce Encanto" class="logo">
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contacto">Contáctanos</a></li>
-                    </ul>
+
+        <!-- Navbar Móvil -->
+        <nav class="navbar navbar-light d-lg-none fixed-top">
+            <div class="container-fluid px-3">
+                <!-- Logo y Botón de Menú -->
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <a class="navbar-brand p-0" href="#inicio">
+                        <img src="images/logo.png" alt="Dulce Encanto" class="logo-mobile">
+                    </a>
+                    
+                    <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
+                        <i class="fas fa-bars text-dark fs-2"></i>
+                    </button>
                 </div>
             </div>
         </nav>
+
+        <!-- Sidebar Móvil -->
+        <div class="offcanvas offcanvas-start mobile-sidebar" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+            <div class="offcanvas-header border-0 bg-gradient-soft-pink">
+                <h5 class="offcanvas-title text-center w-100 mb-0" id="mobileSidebarLabel">
+                    <img src="images/logo.png" alt="Dulce Encanto" class="logo-sidebar mb-2">
+                    <span class="d-block text-white fw-bold">Menú</span>
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            
+            <div class="offcanvas-body p-0">
+                <ul class="navbar-nav flex-column w-100">
+                    <li class="nav-item w-100">
+                        <a class="nav-link-mobile active px-4 py-3 border-bottom" href="#inicio">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-home me-3 text-pink fs-5"></i>
+                                <span class="flex-grow-1">Inicio</span>
+                                <i class="fas fa-chevron-right ms-auto text-muted"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link-mobile px-4 py-3 border-bottom" href="#nosotros">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-heart me-3 text-pink fs-5"></i>
+                                <span class="flex-grow-1">Nosotros</span>
+                                <i class="fas fa-chevron-right ms-auto text-muted"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link-mobile px-4 py-3 border-bottom" href="#productos">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-cookie-bite me-3 text-pink fs-5"></i>
+                                <span class="flex-grow-1">Productos</span>
+                                <i class="fas fa-chevron-right ms-auto text-muted"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link-mobile px-4 py-3 border-bottom" href="#galeria">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-images me-3 text-pink fs-5"></i>
+                                <span class="flex-grow-1">Galería</span>
+                                <i class="fas fa-chevron-right ms-auto text-muted"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link-mobile px-4 py-3" href="#contacto">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-phone me-3 text-pink fs-5"></i>
+                                <span class="flex-grow-1">Contacto</span>
+                                <i class="fas fa-chevron-right ms-auto text-muted"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Social Links en Sidebar -->
+                <div class="social-links-sidebar px-4 pb-4 mt-4">
+                    <a href="#" class="social-link-sidebar me-3" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link-sidebar me-3" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link-sidebar" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="hero-section">
+    <!-- HERO SECTION - TOTALMENTE CORREGIDO -->
+    <section id="inicio" class="hero-section pt-5 pt-lg-0">
         <!-- Background -->
         <div class="hero-bg"></div>
         
         <!-- Swiper Container -->
         <div class="swiper heroSwiper">
             <div class="swiper-wrapper">
-                <!-- Slide 1 -->
+                <!-- Slide 1 - CORREGIDO -->
                 <div class="swiper-slide">
                     <div class="hero-slide">
-                        <div class="container">
-                            <div class="row align-items-center min-vh-100">
-                                <div class="col-lg-6">
-                                    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
-                                        <h2 class="hero-subtitle">✨ Bienvenidos</h2>
-                                        <h1 class="hero-title">Productos de <span>Calidad</span> Artesanal</h1>
-                                        <p class="hero-description">En Panadería Dulce Encanto elaboramos cada día pan fresco, pasteles artesanales y dulces únicos que deleitan los sentidos. Nuestra tradición familiar de tres generaciones se combina con técnicas modernas para ofrecerte lo mejor en repostería.</p>
-                                        <div class="hero-buttons">
-                                            <a href="#nosotros" class="btn btn-primary">
+                        <div class="container-fluid px-2 px-lg-0">
+                            <div class="row align-items-center g-0 min-vh-100">
+                                <div class="col-12 col-lg-6 order-lg-1 d-flex flex-column justify-content-center px-3 px-lg-4">
+                                    <div class="hero-content text-center text-lg-start" data-aos="fade-up" data-aos-duration="1200">
+                                        <h2 class="hero-subtitle text-center text-lg-start mb-3">✨ Bienvenidos</h2>
+                                        <h1 class="hero-title text-center text-lg-start mb-3">Productos de <span>Calidad</span> Artesanal</h1>
+                                        <p class="hero-description text-center text-lg-start mb-4">En Panadería Dulce Encanto elaboramos cada día pan fresco, pasteles artesanales y dulces únicos que deleitan los sentidos. Nuestra tradición familiar de tres generaciones se combina con técnicas modernas para ofrecerte lo mejor en repostería.</p>
+                                        <div class="hero-buttons d-flex justify-content-center justify-content-lg-start gap-3 flex-column flex-md-row mt-3 mt-lg-0">
+                                            <a href="#nosotros" class="btn btn-primary mx-auto mx-lg-0">
                                                 <i class="fas fa-heart btn-icon"></i>
                                                 Conócenos Más
                                             </a>
-                                            <a href="#productos" class="btn btn-outline">
+                                            <a href="#productos" class="btn btn-outline mx-auto mx-lg-0">
                                                 <i class="fas fa-cookie-bite btn-icon"></i>
                                                 Ver Productos
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="hero-image position-relative" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
-                                        <img src="images/banner-image.png" alt="Panadería Artesanal" class="img-fluid hero-img">
+                                <div class="col-12 col-lg-6 order-lg-2 mt-4 mt-lg-0 d-flex justify-content-center align-items-center">
+                                    <div class="hero-image position-relative text-center px-3 px-lg-0" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
+                                        <img src="images/banner-image.png" alt="Panadería Artesanal" class="img-fluid hero-img mx-auto d-block">
                                         <div class="hero-decoration">
                                             <div class="decoration-element"></div>
                                             <div class="decoration-element"></div>
@@ -125,28 +192,28 @@
                 <!-- Slide 2 -->
                 <div class="swiper-slide">
                     <div class="hero-slide">
-                        <div class="container">
-                            <div class="row align-items-center min-vh-100">
-                                <div class="col-lg-6">
-                                    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
-                                        <h2 class="hero-subtitle">🌸 Experiencia</h2>
-                                        <h1 class="hero-title">Única en <span>Dulce Encanto</span></h1>
-                                        <p class="hero-description">Descubre nuestra selección de panes artesanales, croissants recién horneados y pasteles personalizados para cada ocasión especial. Calidad garantizada con ingredientes 100% naturales.</p>
-                                        <div class="hero-buttons">
-                                            <a href="#productos" class="btn btn-primary">
+                        <div class="container-fluid px-2 px-lg-0">
+                            <div class="row align-items-center g-0 min-vh-100">
+                                <div class="col-12 col-lg-6 order-lg-1 d-flex flex-column justify-content-center px-3 px-lg-4">
+                                    <div class="hero-content text-center text-lg-start" data-aos="fade-up" data-aos-duration="1200">
+                                        <h2 class="hero-subtitle text-center text-lg-start mb-3">🌸 Experiencia</h2>
+                                        <h1 class="hero-title text-center text-lg-start mb-3">Única en <span>Dulce Encanto</span></h1>
+                                        <p class="hero-description text-center text-lg-start mb-4">Descubre nuestra selección de panes artesanales, croissants recién horneados y pasteles personalizados para cada ocasión especial. Calidad garantizada con ingredientes 100% naturales.</p>
+                                        <div class="hero-buttons d-flex justify-content-center justify-content-lg-start gap-3 flex-column flex-md-row mt-3 mt-lg-0">
+                                            <a href="#productos" class="btn btn-primary mx-auto mx-lg-0">
                                                 <i class="fas fa-shopping-cart btn-icon"></i>
                                                 Ver Productos
                                             </a>
-                                            <a href="#contacto" class="btn btn-outline">
+                                            <a href="#contacto" class="btn btn-outline mx-auto mx-lg-0">
                                                 <i class="fas fa-phone btn-icon"></i>
                                                 Pedir Ahora
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="hero-image position-relative" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
-                                        <img src="images/cookies.png" alt="Croissants" class="img-fluid hero-img">
+                                <div class="col-12 col-lg-6 order-lg-2 mt-4 mt-lg-0 d-flex justify-content-center align-items-center">
+                                    <div class="hero-image position-relative text-center px-3 px-lg-0" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
+                                        <img src="images/cookies.png" alt="Croissants" class="img-fluid hero-img mx-auto d-block">
                                         <div class="hero-decoration">
                                             <div class="decoration-element"></div>
                                             <div class="decoration-element"></div>
@@ -166,28 +233,28 @@
                 <!-- Slide 3 -->
                 <div class="swiper-slide">
                     <div class="hero-slide">
-                        <div class="container">
-                            <div class="row align-items-center min-vh-100">
-                                <div class="col-lg-6">
-                                    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
-                                        <h2 class="hero-subtitle">💖 Tradición</h2>
-                                        <h1 class="hero-title">y <span>Pasión</span> en Cada Bocado</h1>
-                                        <p class="hero-description">Desde 1995, Dulce Encanto ha sido sinónimo de calidad y sabor auténtico. Ven y vive la experiencia de nuestra panadería familiar donde cada producto cuenta una historia.</p>
-                                        <div class="hero-buttons">
-                                            <a href="#nosotros" class="btn btn-primary">
+                        <div class="container-fluid px-2 px-lg-0">
+                            <div class="row align-items-center g-0 min-vh-100">
+                                <div class="col-12 col-lg-6 order-lg-1 d-flex flex-column justify-content-center px-3 px-lg-4">
+                                    <div class="hero-content text-center text-lg-start" data-aos="fade-up" data-aos-duration="1200">
+                                        <h2 class="hero-subtitle text-center text-lg-start mb-3">💖 Tradición</h2>
+                                        <h1 class="hero-title text-center text-lg-start mb-3">y <span>Pasión</span> en Cada Bocado</h1>
+                                        <p class="hero-description text-center text-lg-start mb-4">Desde 1995, Dulce Encanto ha sido sinónimo de calidad y sabor auténtico. Ven y vive la experiencia de nuestra panadería familiar donde cada producto cuenta una historia.</p>
+                                        <div class="hero-buttons d-flex justify-content-center justify-content-lg-start gap-3 flex-column flex-md-row mt-3 mt-lg-0">
+                                            <a href="#nosotros" class="btn btn-primary mx-auto mx-lg-0">
                                                 <i class="fas fa-book-open btn-icon"></i>
                                                 Nuestra Historia
                                             </a>
-                                            <a href="#contacto" class="btn btn-outline">
+                                            <a href="#contacto" class="btn btn-outline mx-auto mx-lg-0">
                                                 <i class="fas fa-map-marker-alt btn-icon"></i>
                                                 Visítanos
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="hero-image position-relative" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
-                                        <img src="images/torta.png" alt="Pasteles" class="img-fluid hero-img">
+                                <div class="col-12 col-lg-6 order-lg-2 mt-4 mt-lg-0 d-flex justify-content-center align-items-center">
+                                    <div class="hero-image position-relative text-center px-3 px-lg-0" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="300">
+                                        <img src="images/torta.png" alt="Pasteles" class="img-fluid hero-img mx-auto d-block">
                                         <div class="hero-decoration">
                                             <div class="decoration-element"></div>
                                             <div class="decoration-element"></div>
@@ -205,48 +272,162 @@
                 </div>
             </div>
             
-            <!-- Navigation -->
-            <div class="swiper-button-next hero-next"></div>
-            <div class="swiper-button-prev hero-prev"></div>
-            <div class="swiper-pagination hero-pagination"></div>
+            <!-- Navigation - Oculta en móvil -->
+            <div class="swiper-button-next hero-next d-none d-lg-block"></div>
+            <div class="swiper-button-prev hero-prev d-none d-lg-block"></div>
+            <div class="swiper-pagination hero-pagination d-none d-lg-block"></div>
+            
+            <!-- Indicadores Móviles -->
+            <div class="mobile-swiper-indicators d-lg-none">
+                <div class="swiper-pagination-mobile"></div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="nosotros" class="about-section py-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="about-image">
-                        <img src="images/cupcake-img.png" alt="Cupcakes Artesanales" class="img-fluid">
+            <div class="row g-5 g-lg-0 align-items-center">
+                <div class="col-12 col-lg-6 order-lg-2 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="about-image position-relative mx-auto mx-lg-0">
+                        <img src="images/cupcake-img.png" alt="Cupcakes Artesanales" class="img-fluid rounded-4 w-100">
                         <div class="image-overlay">
-                            <div class="overlay-content">
+                            <div class="overlay-content text-center">
                                 <i class="fas fa-heart"></i>
                                 <span>Hecho con amor</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                <div class="col-12 col-lg-6 order-lg-1 text-center text-lg-start" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                     <div class="about-content">
-                        <h2 class="section-title">Sobre <span>Dulce Encanto</span></h2>
-                        <p class="section-subtitle">Una tradición familiar desde 1995</p>
-                        <p class="section-description">Panadería Dulce Encanto nació en 1995 como un pequeño sueño familiar en el corazón de la ciudad. Hoy, con tres generaciones de panaderos, seguimos manteniendo nuestra esencia: productos artesanales de alta calidad con ingredientes naturales seleccionados.</p>
-                        <div class="about-stats">
-                            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                                <h3 data-target="29">0</h3>
-                                <p>Años de experiencia</p>
+                        <div class="text-center text-lg-start mb-4">
+                            <h2 class="section-title mb-3">Sobre <span>Dulce Encanto</span></h2>
+                            <p class="section-subtitle mb-0">Una tradición familiar desde 1995</p>
+                        </div>
+                        <p class="section-description mb-4 text-center text-lg-start">Panadería Dulce Encanto nació en 1995 como un pequeño sueño familiar en el corazón de la ciudad. Hoy, con tres generaciones de panaderos, seguimos manteniendo nuestra esencia: productos artesanales de alta calidad con ingredientes naturales seleccionados.</p>
+                        
+                        <!-- Stats - Centrados en móvil -->
+                        <div class="about-stats row g-3 g-sm-4 justify-content-center justify-content-lg-start">
+                            <div class="col-4 col-sm-4 stat-item text-center" data-aos="fade-up" data-aos-delay="100">
+                                <h3 data-target="29" class="text-center">0</h3>
+                                <p class="text-center">Años de experiencia</p>
                             </div>
-                            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                                <h3 data-target="3">0</h3>
-                                <p>Generaciones</p>
+                            <div class="col-4 col-sm-4 stat-item text-center" data-aos="fade-up" data-aos-delay="200">
+                                <h3 data-target="3" class="text-center">0</h3>
+                                <p class="text-center">Generaciones</p>
                             </div>
-                            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                                <h3 data-target="100">0</h3>
-                                <p>% Ingredientes naturales</p>
+                            <div class="col-4 col-sm-4 stat-item text-center" data-aos="fade-up" data-aos-delay="300">
+                                <h3 data-target="100" class="text-center">0</h3>
+                                <p class="text-center">% Natural</p>
                             </div>
                         </div>
-                        <a href="#productos" class="btn btn-primary btn-hover mt-4">Nuestra Historia</a>
+                        
+                        <div class="text-center text-lg-start mt-4">
+                            <a href="#productos" class="btn btn-primary mx-auto mx-lg-0">Descubre Nuestra Historia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery-section py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title mb-3">Nuestra <span>Galería</span></h2>
+                <p class="section-subtitle mb-0">Momentos dulces capturados en cada creación</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-item h-100 position-relative">
+                        <img src="images/gallery1.jpg" alt="Pastel de cumpleaños" class="img-fluid w-100" data-fancybox="gallery">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content text-center">
+                                <h3 class="mb-2">Pastel de Cumpleaños</h3>
+                                <p class="mb-3">Personalizado con amor</p>
+                                <a href="images/gallery1.jpg" data-fancybox="gallery" class="gallery-link mx-auto d-block">
+                                    <i class="fas fa-search-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-item h-100 position-relative">
+                        <img src="images/gallery2.jpg" alt="Bodas" class="img-fluid w-100" data-fancybox="gallery">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content text-center">
+                                <h3 class="mb-2">Pasteles de Boda</h3>
+                                <p class="mb-3">Para el día más especial</p>
+                                <a href="images/gallery2.jpg" data-fancybox="gallery" class="gallery-link mx-auto d-block">
+                                    <i class="fas fa-search-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="gallery-item h-100 position-relative">
+                        <img src="images/gallery3.jpg" alt="Cupcakes" class="img-fluid w-100" data-fancybox="gallery">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content text-center">
+                                <h3 class="mb-2">Cupcakes Artesanales</h3>
+                                <p class="mb-3">Pequeños pero perfectos</p>
+                                <a href="images/gallery3.jpg" data-fancybox="gallery" class="gallery-link mx-auto d-block">
+                                    <i class="fas fa-search-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="gallery-item h-100 position-relative">
+                        <img src="images/gallery4.jpg" alt="Croissants" class="img-fluid w-100" data-fancybox="gallery">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content text-center">
+                                <h3 class="mb-2">Croissants Horneados</h3>
+                                <p class="mb-3">Crispy por fuera, suaves por dentro</p>
+                                <a href="images/gallery4.jpg" data-fancybox="gallery" class="gallery-link mx-auto d-block">
+                                    <i class="fas fa-search-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="gallery-item h-100 position-relative">
+                        <img src="images/gallery5.jpg" alt="Donas" class="img-fluid w-100" data-fancybox="gallery">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content text-center">
+                                <h3 class="mb-2">Donas Glaseadas</h3>
+                                <p class="mb-3">Para los más golosos</p>
+                                <a href="images/gallery5.jpg" data-fancybox="gallery" class="gallery-link mx-auto d-block">
+                                    <i class="fas fa-search-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="gallery-item h-100 position-relative">
+                        <img src="images/gallery6.jpg" alt="Panadería" class="img-fluid w-100" data-fancybox="gallery">
+                        <div class="gallery-overlay">
+                            <div class="gallery-content text-center">
+                                <h3 class="mb-2">Nuestra Panadería</h3>
+                                <p class="mb-3">Donde todo comienza</p>
+                                <a href="images/gallery6.jpg" data-fancybox="gallery" class="gallery-link mx-auto d-block">
+                                    <i class="fas fa-search-plus"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -257,97 +438,97 @@
     <section id="productos" class="products-section py-5">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Nuestros <span>Productos</span></h2>
-                <p class="section-subtitle">Descubre nuestra selección de delicias horneadas con amor y tradición</p>
+                <h2 class="section-title mb-3">Nuestros <span>Productos</span></h2>
+                <p class="section-subtitle mb-0">Descubre nuestra selección de delicias horneadas con amor y tradición</p>
             </div>
             
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="product-card h-100">
-                        <div class="product-image">
-                            <img src="images/about-img1.png" alt="Croissants" class="img-fluid">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card h-100 text-center">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/about-img1.png" alt="Croissants" class="img-fluid w-100">
                             <div class="product-overlay">
-                                <a href="#" class="btn btn-sm">Ver Detalles</a>
+                                <a href="#" class="btn btn-sm mx-auto d-block">Ver Detalles</a>
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Croissants Artesanales</h3>
-                            <p class="product-price">$25</p>
+                        <div class="product-content p-4">
+                            <h3 class="product-title mb-2 text-center">Croissants Artesanales</h3>
+                            <p class="product-price mb-0 text-center">$25</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="product-card h-100">
-                        <div class="product-image">
-                            <img src="images/about-img2.png" alt="Rollo de Chocolate" class="img-fluid">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card h-100 text-center">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/about-img2.png" alt="Rollo de Chocolate" class="img-fluid w-100">
                             <div class="product-overlay">
-                                <a href="#" class="btn btn-sm">Ver Detalles</a>
+                                <a href="#" class="btn btn-sm mx-auto d-block">Ver Detalles</a>
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Rollo de Chocolate</h3>
-                            <p class="product-price">$35</p>
+                        <div class="product-content p-4">
+                            <h3 class="product-title mb-2 text-center">Rollo de Chocolate</h3>
+                            <p class="product-price mb-0 text-center">$35</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="product-card h-100">
-                        <div class="product-image">
-                            <img src="images/about-img3.png" alt="Pan Francés" class="img-fluid">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card h-100 text-center">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/about-img3.png" alt="Pan Francés" class="img-fluid w-100">
                             <div class="product-overlay">
-                                <a href="#" class="btn btn-sm">Ver Detalles</a>
+                                <a href="#" class="btn btn-sm mx-auto d-block">Ver Detalles</a>
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Pan Francés Artesanal</h3>
-                            <p class="product-price">$20</p>
+                        <div class="product-content p-4">
+                            <h3 class="product-title mb-2 text-center">Pan Francés Artesanal</h3>
+                            <p class="product-price mb-0 text-center">$20</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="product-card h-100">
-                        <div class="product-image">
-                            <img src="images/about-img4.png" alt="Cupcakes" class="img-fluid">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card h-100 text-center">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/about-img4.png" alt="Cupcakes" class="img-fluid w-100">
                             <div class="product-overlay">
-                                <a href="#" class="btn btn-sm">Ver Detalles</a>
+                                <a href="#" class="btn btn-sm mx-auto d-block">Ver Detalles</a>
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Cupcakes Personalizados</h3>
-                            <p class="product-price">$45</p>
+                        <div class="product-content p-4">
+                            <h3 class="product-title mb-2 text-center">Cupcakes Personalizados</h3>
+                            <p class="product-price mb-0 text-center">$45</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="product-card h-100">
-                        <div class="product-image">
-                            <img src="images/about-img5.png" alt="Donas" class="img-fluid">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="product-card h-100 text-center">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/about-img5.png" alt="Donas" class="img-fluid w-100">
                             <div class="product-overlay">
-                                <a href="#" class="btn btn-sm">Ver Detalles</a>
+                                <a href="#" class="btn btn-sm mx-auto d-block">Ver Detalles</a>
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Donas Glaseadas</h3>
-                            <p class="product-price">$30</p>
+                        <div class="product-content p-4">
+                            <h3 class="product-title mb-2 text-center">Donas Glaseadas</h3>
+                            <p class="product-price mb-0 text-center">$30</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="product-card h-100">
-                        <div class="product-image">
-                            <img src="images/about-img6.png" alt="Pastel Chocolate" class="img-fluid">
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="product-card h-100 text-center">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/about-img6.png" alt="Pastel Chocolate" class="img-fluid w-100">
                             <div class="product-overlay">
-                                <a href="#" class="btn btn-sm">Ver Detalles</a>
+                                <a href="#" class="btn btn-sm mx-auto d-block">Ver Detalles</a>
                             </div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Pastel de Chocolate</h3>
-                            <p class="product-price">$180</p>
+                        <div class="product-content p-4">
+                            <h3 class="product-title mb-2 text-center">Pastel de Chocolate</h3>
+                            <p class="product-price mb-0 text-center">$180</p>
                         </div>
                     </div>
                 </div>
@@ -355,87 +536,103 @@
         </div>
     </section>
 
-
     <!-- Contact Section -->
     <section id="contacto" class="contact-section py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+            <div class="row g-5 g-lg-0">
+                <div class="col-12 col-lg-6 order-lg-1" data-aos="fade-right" data-aos-duration="1000">
                     <div class="contact-form">
-                        <h2 class="section-title mb-4">Ponte en <span>Contacto</span></h2>
-                        <p class="section-subtitle">Estamos aquí para hacer realidad tus dulces sueños</p>
+                        <div class="text-center text-lg-start mb-4">
+                            <h2 class="section-title mb-3 text-center text-lg-start">Ponte en <span>Contacto</span></h2>
+                            <p class="section-subtitle mb-0 text-center text-lg-start">Estamos aquí para hacer realidad tus dulces sueños</p>
+                        </div>
                         <form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <input type="text" class="form-control" placeholder="Tu Nombre" required>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <input type="text" class="form-control text-center text-lg-start" placeholder="Tu Nombre *" required>
                                 </div>
-                                <div class="col-md-6 mb-4">
-                                    <input type="email" class="form-control" placeholder="Correo Electrónico" required>
+                                <div class="col-12 col-md-6">
+                                    <input type="email" class="form-control text-center text-lg-start" placeholder="Correo Electrónico *" required>
                                 </div>
-                                <div class="col-12 mb-4">
-                                    <input type="tel" class="form-control" placeholder="Teléfono" required>
-                                </div>
-                                <div class="col-12 mb-4">
-                                    <textarea class="form-control" rows="5" placeholder="Tu mensaje - Cuéntanos sobre tu pedido especial" required></textarea>
+                                <div class="col-12 col-md-6">
+                                    <input type="tel" class="form-control text-center text-lg-start" placeholder="Teléfono de contacto *" required>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-primary btn-hover w-100">Enviar Mensaje</button>
+                                    <textarea class="form-control text-center text-lg-start" rows="4" placeholder="Tu mensaje - Cuéntanos sobre tu pedido especial *" required></textarea>
+                                </div>
+                                <div class="col-12 text-center text-lg-start">
+                                    <button type="submit" class="btn btn-primary w-100 btn-submit">
+                                        <i class="fas fa-paper-plane me-2"></i>
+                                        Enviar Mensaje
+                                    </button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
                 
-                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-                    <div class="contact-info">
-                        <h2 class="section-title mb-4">Información de <span>Contacto</span></h2>
-                        <p class="section-subtitle">Encuéntranos y déjate sorprender</p>
+                <div class="col-12 col-lg-6 order-lg-2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="contact-info h-100">
+                        <div class="text-center text-lg-start mb-4">
+                            <h2 class="section-title mb-3 text-center text-lg-start">Información de <span>Contacto</span></h2>
+                            <p class="section-subtitle mb-0 text-center text-lg-start">Encuéntranos y déjate sorprender</p>
+                        </div>
                         
-                        <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
-                            <div class="contact-icon">
+                        <div class="contact-item mb-4 text-center text-lg-start" data-aos="fade-up" data-aos-delay="100">
+                            <div class="contact-icon mx-auto mx-lg-3 mb-3 mb-lg-0">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div>
-                                <h5>Dirección</h5>
-                                <p>Av. 10 245,<br>Ciudad de México</p>
+                            <div class="flex-grow-1">
+                                <h5 class="mb-2 text-center text-lg-start">📍 Dirección</h5>
+                                <p class="mb-0 text-center text-lg-start">Av. 10 245,<br class="d-none d-md-block"><small class="text-muted">Ciudad de México</small></p>
                             </div>
                         </div>
                         
-                        <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="contact-icon">
+                        <div class="contact-item mb-4 text-center text-lg-start" data-aos="fade-up" data-aos-delay="200">
+                            <div class="contact-icon mx-auto mx-lg-3 mb-3 mb-lg-0">
                                 <i class="fas fa-phone"></i>
                             </div>
-                            <div>
-                                <h5>Teléfono</h5>
-                                <p>+52 (55) 1234 5678</p>
+                            <div class="flex-grow-1">
+                                <h5 class="mb-2 text-center text-lg-start">📞 Teléfono</h5>
+                                <p class="mb-0 text-center text-lg-start"><a href="tel:+525512345678" class="text-decoration-none">+52 (55) 1234 5678</a></p>
                             </div>
                         </div>
                         
-                        <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
-                            <div class="contact-icon">
+                        <div class="contact-item mb-4 text-center text-lg-start" data-aos="fade-up" data-aos-delay="300">
+                            <div class="contact-icon mx-auto mx-lg-3 mb-3 mb-lg-0">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div>
-                                <h5>Email</h5>
-                                <p>hola@dulceencanto.mx</p>
+                            <div class="flex-grow-1">
+                                <h5 class="mb-2 text-center text-lg-start">✉️ Email</h5>
+                                <p class="mb-0 text-center text-lg-start"><a href="mailto:hola@dulceencanto.mx" class="text-decoration-none">hola@dulceencanto.mx</a></p>
                             </div>
                         </div>
                         
-                        <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="contact-icon">
+                        <div class="contact-item mb-4 text-center text-lg-start" data-aos="fade-up" data-aos-delay="400">
+                            <div class="contact-icon mx-auto mx-lg-3 mb-3 mb-lg-0">
                                 <i class="fas fa-clock"></i>
                             </div>
-                            <div>
-                                <h5>Horarios</h5>
-                                <p>Lun-Vie: 7:00-20:00<br>Sáb-Dom: 8:00-18:00</p>
+                            <div class="flex-grow-1">
+                                <h5 class="mb-2 text-center text-lg-start">⏰ Horarios</h5>
+                                <p class="mb-0 text-center text-lg-start">
+                                    <small>Lun-Vie: 7:00-20:00<br>Sáb-Dom: 8:00-18:00</small>
+                                </p>
                             </div>
                         </div>
                         
-                        <div class="social-links mt-4" data-aos="fade-up" data-aos-delay="500">
-                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <div class="social-links mt-4 justify-content-center justify-content-lg-start" data-aos="fade-up" data-aos-delay="500">
+                            <a href="#" class="social-link me-2" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link me-2" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link me-2" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -446,40 +643,85 @@
     <!-- Footer -->
     <footer class="footer-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
+            <div class="row g-4 g-lg-5">
+                <div class="col-12 col-lg-6 text-center text-lg-start">
                     <div class="footer-brand">
-                        <img src="images/logo.png" alt="Dulce Encanto" class="footer-logo">
-                        <p>Panadería artesanal con más de 25 años de experiencia creando momentos dulces para tus seres queridos. Cada bocado cuenta una historia de amor y tradición.</p>
+                        <img src="images/logo.png" alt="Dulce Encanto" class="footer-logo mb-3 mx-auto mx-lg-0 d-block">
+                        <p class="text-white-50 text-center text-lg-start">Panadería artesanal con más de 25 años de experiencia creando momentos dulces para tus seres queridos. Cada bocado cuenta una historia de amor y tradición.</p>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-6 text-center text-lg-end">
                     <div class="footer-links">
-                        <h5>Enlaces Rápidos</h5>
-                        <ul>
-                            <li><a href="#inicio">Inicio</a></li>
-                            <li><a href="#nosotros">Nosotros</a></li>
-                            <li><a href="#productos">Productos</a></li>
-                            <li><a href="#contacto">Contacto</a></li>
-                        </ul>
+                        <h5 class="text-soft-pink mb-4 text-center text-lg-end">Enlaces Rápidos</h5>
+                        <div class="row g-2 justify-content-center justify-content-lg-end">
+                            <div class="col-6 col-md-3">
+                                <a href="#inicio" class="d-block text-white-50 hover-text-soft-pink text-center text-lg-end">
+                                    <i class="fas fa-home me-1 d-block d-lg-none"></i>
+                                    <i class="fas fa-home me-2 d-none d-lg-inline"></i>
+                                    Inicio
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <a href="#nosotros" class="d-block text-white-50 hover-text-soft-pink text-center text-lg-end">
+                                    <i class="fas fa-heart me-1 d-block d-lg-none"></i>
+                                    <i class="fas fa-heart me-2 d-none d-lg-inline"></i>
+                                    Nosotros
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <a href="#productos" class="d-block text-white-50 hover-text-soft-pink text-center text-lg-end">
+                                    <i class="fas fa-cookie-bite me-1 d-block d-lg-none"></i>
+                                    <i class="fas fa-cookie-bite me-2 d-none d-lg-inline"></i>
+                                    Productos
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <a href="#contacto" class="d-block text-white-50 hover-text-soft-pink text-center text-lg-end">
+                                    <i class="fas fa-phone me-1 d-block d-lg-none"></i>
+                                    <i class="fas fa-phone me-2 d-none d-lg-inline"></i>
+                                    Contacto
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <hr class="my-4">
+            <hr class="my-4 border-white opacity-10">
             
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">© 2025 | Todos los derechos reservados.</p>
+                <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 text-white-50">
+                        <small>© 2025 Dulce Encanto. Todos los derechos reservados.</small>
+                    </p>
                 </div>
-                <div class="col-md-6 text-md-end">
+                <div class="col-12 col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-white-50">
+                        <small>Hecho con ❤️ para los amantes del buen pan</small>
+                    </p>
                 </div>
+            </div>
+            
+            <!-- Social Links Footer -->
+            <div class="social-links-footer text-center mt-4">
+                <a href="#" class="social-link-footer me-3" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link-footer me-3" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link-footer me-3" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link-footer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" id="backToTop">
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Volver arriba">
         <i class="fas fa-chevron-up"></i>
     </a>
 
@@ -493,4 +735,3 @@
     <script src="js/custom.js"></script>
 </body>
 </html>
-
