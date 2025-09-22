@@ -195,7 +195,74 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     images.forEach(img => imageObserver.observe(img));
+
+    // FUNCIÓN MEJORADA PARA BOTÓN VOLVER ARRIBA
+    const backToTop = document.getElementById('backToTop');
+    
+    if (backToTop) {
+        // Prevenir comportamiento por defecto
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Agregar feedback visual suave
+            this.style.transform = 'scale(0.95)';
+            this.style.transition = 'transform 0.1s ease';
+            
+            // Volver a escala normal después del click
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+            
+            // Ejecutar scroll suave
+            scrollToTop();
+        });
+        
+        // Efecto hover suave para el botón
+        backToTop.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+            this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
+        });
+        
+        backToTop.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+        });
+    }
 });
+
+// FUNCIÓN PARA EL BOTÓN VOLVER ARRIBA - VERSIÓN MEJORADA Y SUAVE
+function scrollToTop() {
+    const duration = 800; // Duración en milisegundos
+    const start = window.pageYOffset;
+    const startTime = performance.now();
+    
+    function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }
+    
+    function animateScroll(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Aplicar easing suave
+        const ease = easeInOutCubic(progress);
+        
+        // Calcular la posición actual
+        const currentPosition = start * (1 - ease);
+        
+        // Mover la ventana
+        window.scrollTo(0, currentPosition);
+        
+        // Si no hemos terminado, continuar la animación
+        if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+        }
+    }
+    
+    // Iniciar la animación
+    requestAnimationFrame(animateScroll);
+}
 
 // PARALLAX SUAVIZADO - Completo
 let ticking = false;
@@ -262,26 +329,32 @@ function requestTick() {
     }
 }
 
-// Navbar Scroll Effect y Back to Top - Mejorado
-window.addEventListener('scroll', function() {
+// Navbar Scroll Effect y Back to Top - OPTIMIZADO
+function updateScrollEffects() {
+    const scrollY = window.scrollY;
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
+    
+    // Navbar scroll effect
+    if (scrollY > 100) {
         navbar.parentElement.classList.add('scrolled');
     } else {
         navbar.parentElement.classList.remove('scrolled');
     }
 
-    // Back to Top Button
+    // Back to Top Button con transición suave
     const backToTop = document.getElementById('backToTop');
-    if (window.scrollY > 400) {
-        backToTop.classList.add('show');
-    } else {
-        backToTop.classList.remove('show');
+    if (backToTop) {
+        if (scrollY > 400) {
+            if (!backToTop.classList.contains('show')) {
+                backToTop.classList.add('show');
+            }
+        } else {
+            if (backToTop.classList.contains('show')) {
+                backToTop.classList.remove('show');
+            }
+        }
     }
 
-    // Parallax effect
-    requestTick();
-    
     // Active nav link
     let current = '';
     const sections = document.querySelectorAll('section');
@@ -300,31 +373,36 @@ window.addEventListener('scroll', function() {
             link.classList.add('active');
         }
     });
-});
 
-// Función para el botón volver arriba - Mejorada
-function scrollToTop() {
-    const scrollDuration = 800;
-    const scrollStep = -window.scrollY / (scrollDuration / 15);
-    
-    const scrollInterval = setInterval(() => {
-        if (window.scrollY != 0) {
-            window.scrollBy(0, scrollStep);
-        } else {
-            clearInterval(scrollInterval);
-        }
-    }, 15);
+    // Parallax effect
+    updateParallax();
 }
 
-// Mejora para el botón volver arriba
-document.addEventListener('DOMContentLoaded', function() {
-    const backToTop = document.getElementById('backToTop');
-    
-    if (backToTop) {
-        backToTop.addEventListener('click', function(e) {
-            e.preventDefault();
-            scrollToTop();
-        });
+// Performance Optimization: Debounce para resize y scroll
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+const debouncedScroll = debounce(() => {
+    updateScrollEffects();
+}, 10);
+
+window.addEventListener('scroll', debouncedScroll);
+
+// Window Resize Handler
+window.addEventListener('resize', function() {
+    AOS.refresh();
+    // Re-inicializar swiper si es necesario
+    if (typeof heroSwiper !== 'undefined') {
+        heroSwiper.update();
     }
 });
 
@@ -385,32 +463,3 @@ setTimeout(function() {
         document.body.classList.add('loaded');
     }
 }, 5000);
-
-// Window Resize Handler
-window.addEventListener('resize', function() {
-    AOS.refresh();
-    // Re-inicializar swiper si es necesario
-    if (typeof heroSwiper !== 'undefined') {
-        heroSwiper.update();
-    }
-});
-
-// Performance Optimization: Debounce para resize y scroll
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Aplicar debounce al scroll si es necesario
-const debouncedScroll = debounce(() => {
-    requestTick();
-}, 10);
-
-window.addEventListener('scroll', debouncedScroll);
