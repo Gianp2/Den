@@ -64,71 +64,36 @@
         </div>
     </nav>
 
-    <!-- Sidebar Móvil -->
-    <div class="offcanvas offcanvas-start mobile-sidebar" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
-        <div class="offcanvas-header border-0 bg-gradient-soft-pink">
-            <h5 class="offcanvas-title text-center w-100 mb-0" id="mobileSidebarLabel">
-                <img src="images/logo.png" alt="Dulce Encanto" class="logo-sidebar mb-2">
-                <span class="d-block text-white fw-bold">Menú</span>
-            </h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        
-        <div class="offcanvas-body p-0">
-            <ul class="navbar-nav flex-column w-100">
-                <li class="nav-item w-100">
-                    <a class="nav-link-mobile active px-4 py-3 border-bottom" href="#inicio">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-home me-3 text-pink fs-5"></i>
-                            <span class="flex-grow-1">Inicio</span>
-                            <i class="fas fa-chevron-right ms-auto text-muted"></i>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item w-100">
-                    <a class="nav-link-mobile px-4 py-3 border-bottom" href="#nosotros">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-heart me-3 text-pink fs-5"></i>
-                            <span class="flex-grow-1">Nosotros</span>
-                            <i class="fas fa-chevron-right ms-auto text-muted"></i>
-                        </div>
-                    </a>
-                </li>
-                <li class="nav-item w-100">
-                    <a class="nav-link-mobile px-4 py-3 border-bottom" href="#productos">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-cookie-bite me-3 text-pink fs-5"></i>
-                            <span class="flex-grow-1">Productos</span>
-                            <i class="fas fa-chevron-right ms-auto text-muted"></i>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="nav-item w-100">
-                    <a class="nav-link-mobile px-4 py-3" href="#contacto">
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-phone me-3 text-pink fs-5"></i>
-                            <span class="flex-grow-1">Contacto</span>
-                            <i class="fas fa-chevron-right ms-auto text-muted"></i>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-
-            <!-- Social Links en Sidebar -->
-            <div class="social-links-sidebar px-4 pb-4 mt-4">
-                <a href="#" class="social-link-sidebar me-3" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-link-sidebar me-3" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-link-sidebar" aria-label="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-        </div>
+   <!-- Sidebar Móvil -->
+<div class="offcanvas offcanvas-start mobile-sidebar" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
+    <div class="offcanvas-header border-0 bg-gradient-soft-pink">
+        <h5 class="offcanvas-title text-center w-100 mb-0" id="mobileSidebarLabel">
+            <img src="images/logo.png" alt="Dulce Encanto" class="logo-sidebar mb-2">
+            <span class="d-block text-white fw-bold">Menú</span>
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+    
+    <div class="offcanvas-body p-0">
+        <ul class="navbar-nav flex-column w-100">
+            <li class="nav-item w-100">
+                <a class="nav-link-mobile active px-4 py-3 border-bottom" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item w-100">
+                <a class="nav-link-mobile px-4 py-3 border-bottom" href="#nosotros">Nosotros</a>
+            </li>
+            <li class="nav-item w-100">
+                <a class="nav-link-mobile px-4 py-3 border-bottom" href="#productos">Productos</a>
+            </li>
+            <li class="nav-item w-100">
+                <a class="nav-link-mobile px-4 py-3" href="#contacto">Contacto</a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+    
 
     <!-- HERO SECTION - SIN BOTONES DE NAVEGACIÓN -->
     <section id="inicio" class="hero-section pt-5 pt-lg-0">
@@ -273,12 +238,14 @@
     <section id="nosotros" class="about-section py-5">
         <div class="container">
             <div class="row g-5 g-lg-0 align-items-center">
-                <div class="col-12 col-lg-6 order-lg-2 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
+                <!-- Imagen a la izquierda (primero en móvil, primero en desktop) -->
+                <div class="col-12 col-lg-6 order-lg-1 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
                     <div class="about-image position-relative mx-auto mx-lg-0">
                         <img src="images/cupcake-img.png" alt="Cupcakes Artesanales" class="img-fluid rounded-4 w-100">
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 order-lg-1 text-center text-lg-start" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                <!-- Contenido a la derecha (segundo en móvil, segundo en desktop) -->
+                <div class="col-12 col-lg-6 order-lg-2 text-center text-lg-start" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
                     <div class="about-content">
                         <div class="text-center text-lg-start mb-4">
                             <h2 class="section-title mb-3">Sobre <span>Dulce Encanto</span></h2>
@@ -507,13 +474,7 @@
                         <small>© 2025 | Todos los derechos reservados.</small>
                     </p>
                 </div>
-                <div class="col-12 col-md-6 text-center text-md-end">
-                    <p class="mb-0 text-white-50">
-                        <small>Hecho con ❤️</small>
-                    </p>
-                </div>
             </div>
-        </div>
     </footer>
 
     <!-- Scripts -->
@@ -526,4 +487,3 @@
     <script src="js/custom.js"></script>
 </body>
 </html>
-
